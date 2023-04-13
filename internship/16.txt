@@ -1,0 +1,8 @@
+TYPES OF ARGUEMENTS:
+ 1.Positional Arguement
+    Ex:addition(a,b)=(5,6)
+ 2.Default Arguement
+ 3.Keyword Arguement
+ 4.Variable length Arguement
+ 5.Keyword length Arguement
+    

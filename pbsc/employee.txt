@@ -1,0 +1,9 @@
+create emp database
+in emp db-
+create employee table--
+eid -->int-->pri
+ename-->char
+erole-->varchar
+mobile-->varchar(10) unique
+dept-->char
+salary-->mediumint..\

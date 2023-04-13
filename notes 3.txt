@@ -1,0 +1,557 @@
+Microsoft Windows [Version 10.0.22621.1265]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Ramesh>mysql --version
+mysql  Ver 8.0.32 for Win64 on x86_64 (MySQL Community Server - GPL)
+
+C:\Users\Ramesh>mysql -u root -p
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.32 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create table ecom_orders(ordid int not null auto_increment primary key,product tinytext,cname char(20),quantity tinyint,total int,dop date,country char(20));
+ERROR 1046 (3D000): No database selected
+mysql> use pyhton;
+ERROR 1049 (42000): Unknown database 'pyhton'
+mysql> use python;
+ERROR 1049 (42000): Unknown database 'python'
+mysql>  mysql-u root-p
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql-u root-p' at line 1
+mysql> mysql -u root -p;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql -u root -p' at line 1
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> mysql -u root-p;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql -u root-p' at line 1
+mysql> create table ecom_orders(ordid int not null auto_increment primary key,product tinytext,cname char(20),quantity tinyint,total int,dop date,country char(20));
+ERROR 1046 (3D000): No database selected
+mysql> create database data;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use data;
+Database changed
+mysql> create table ecom_orders(ordid int not null auto_increment primary key,product tinytext,cname char(20),quantity tinyint,total int,dop date,country char(20));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc ecom_orders;
++----------+----------+------+-----+---------+----------------+
+| Field    | Type     | Null | Key | Default | Extra          |
++----------+----------+------+-----+---------+----------------+
+| ordid    | int      | NO   | PRI | NULL    | auto_increment |
+| product  | tinytext | YES  |     | NULL    |                |
+| cname    | char(20) | YES  |     | NULL    |                |
+| quantity | tinyint  | YES  |     | NULL    |                |
+| total    | int      | YES  |     | NULL    |                |
+| dop      | date     | YES  |     | NULL    |                |
+| country  | char(20) | YES  |     | NULL    |                |
++----------+----------+------+-----+---------+----------------+
+7 rows in set (0.01 sec)
+
+mysql> alter table ecom_orders
+    -> auto_increment=2157445;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into ecom_oredrs(product,cname,quantity,total,dop,country)values('pens','ranjith'10,100,'2019-02-09','US'),('Laptop','Yeshwanth',1,49999,2020-01-23','IN')('table','swapna'1,1399,'2023-01-23','IN'),('speaker','sudheer',2,1099,'2019-09-10','Netherlands'),('PENS','Suma',5,200,'2016-08-29','US');
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '> ...
+    '> insert into ecom_oredrs(product,cname,quantity,total,dop,country)values('pens','ranjith',10,100,'2019-02-09','US'),('Laptop','Yeshwanth',1,49999,2020-01-23','IN')('table','swapna',1,1399,'2023-01-23','IN'),('speaker','sudheer',2,1099,'2019-09-10','Netherlands'),('PENS','Suma',5,200,'2016-08-29','US');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10,100,'2019-02-09','US'),('Laptop','Yeshwanth',1,49999,2020-01-23','IN')('table' at line 1
+mysql> insert into ecom_oredrs(product,cname,quantity,total,dop,country)values('pens','ranjith',10,100,'2019-02-09','US'),('Laptop','Yeshwanth',1,49999,'2020-01-23','IN')('table','swapna',1,1399,'2023-01-23','IN'),('speaker','sudheer',2,1099,'2019-09-10','Netherlands'),('PENS','Suma',5,200,'2016-08-29','US');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('table','swapna',1,1399,'2023-01-23','IN'),('speaker','sudheer',2,1099,'2019-09' at line 1
+mysql> insert into ecom_orders(product,cname,quantity,total,dop,country)values('pens','ranjith',10,100,'2019-02-09','US'),('Laptop','Yeshwanth',1,49999,'2020-01-23','IN'),('table','swapna',1,1399,'2023-01-23','IN'),('speaker','sudheer',2,1099,'2019-09-10','Netherlands'),('PENS','Suma',5,200,'2016-08-29','US');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select *from ecom_orders;
++---------+---------+-----------+----------+-------+------------+-------------+
+| ordid   | product | cname     | quantity | total | dop        | country     |
++---------+---------+-----------+----------+-------+------------+-------------+
+| 2157445 | pens    | ranjith   |       10 |   100 | 2019-02-09 | US          |
+| 2157446 | Laptop  | Yeshwanth |        1 | 49999 | 2020-01-23 | IN          |
+| 2157447 | table   | swapna    |        1 |  1399 | 2023-01-23 | IN          |
+| 2157448 | speaker | sudheer   |        2 |  1099 | 2019-09-10 | Netherlands |
+| 2157449 | PENS    | Suma      |        5 |   200 | 2016-08-29 | US          |
++---------+---------+-----------+----------+-------+------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> select min(total) from ecom_orders;
++------------+
+| min(total) |
++------------+
+|        100 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select product,total from ecom_orders order by total asc;
++---------+-------+
+| product | total |
++---------+-------+
+| pens    |   100 |
+| PENS    |   200 |
+| speaker |  1099 |
+| table   |  1399 |
+| Laptop  | 49999 |
++---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select sum(total) from ecom_orders;
++------------+
+| sum(total) |
++------------+
+|      52797 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select sum(total)  as pens_total from ecom_orders;
++------------+
+| pens_total |
++------------+
+|      52797 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select sum(total)  as pens_total from ecom_orders where product='pens;
+    '> select sum(total)  as pens_total from ecom_orders where product='pens';
+    '>
+    '>
+    '>
+    '> select sum(total) as pens_total from ecom_orders where product='pens';
+    '>
+    '>
+    '>
+    '>
+    '> select sum(total) as total from ecom_orders;
+    '>
+    '> select sum(total) as pens_total from ecom_orders where product='pens';
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '> ^Z
+Bye
+
+C:\Users\Ramesh>mysql -u root -p
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.32 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select sum(total) as pens_total from ecom_orders where product='pens';
+ERROR 1046 (3D000): No database selected
+mysql> use data;
+Database changed
+mysql> select sum(total) as pens_total from ecom_orders where product='pens';
++------------+
+| pens_total |
++------------+
+|        300 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(total) as avg_total from ecom_oredrs;
+ERROR 1146 (42S02): Table 'data.ecom_oredrs' doesn't exist
+mysql> select avg(total) as avg_total from ecom_orders;
++------------+
+| avg_total  |
++------------+
+| 10559.4000 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(quantity) frm ecom
+    -> _orders;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ecom
+_orders' at line 1
+mysql> select avg(quantity) from ecom_orders;
++---------------+
+| avg(quantity) |
++---------------+
+|        3.8000 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(total) as avg_total from ecom_orders;
++------------+
+| avg_total  |
++------------+
+| 10559.4000 |
++------------+
+1 row in set (0.00 sec)
+
+mysql>
+mysql> use backup;
+ERROR 1049 (42000): Unknown database 'backup'
+mysql> create database backup;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use backup;
+Database changed
+mysql> "C:/Users/Ramesh/copyofdata.sql"
+    -> "C:/Users/Ramesh/copyofdata.sql";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"C:/Users/Ramesh/copyofdata.sql"
+"C:/Users/Ramesh/copyofdata.sql"' at line 1
+mysql> source C:/Users/Ramesh/copyofdata.sql
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> commit
+    -> commit;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'commit' at line 2
+mysql> show databses;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databses' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| backup             |
+| data               |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> source C:/Users/Ramesh/copyofdata.sql
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_backup |
++------------------+
+| ecom_orders      |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> create table whatsapp(sender varchar(50), receiver varchar(50), message tinytext, time datetime default current_timestamp);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into whatsapp(sender, receiver,message) values('kalyani','madhu','Just go to hell');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into whatsapp(sender, receiver,message) values('kalyani','madhu','What the hell are you doing here');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into whatsapp(sender, receiver,message) values('kalyani','madhu','ok bye');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select *from whatsapp;
++---------+----------+----------------------------------+---------------------+
+| sender  | receiver | message                          | time                |
++---------+----------+----------------------------------+---------------------+
+| kalyani | madhu    | Just go to hell                  | 2023-03-02 12:51:57 |
+| kalyani | madhu    | What the hell are you doing here | 2023-03-02 12:52:20 |
+| kalyani | madhu    | ok bye                           | 2023-03-02 12:52:49 |
++---------+----------+----------------------------------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql> select sender, receiver,message,date_format(time,'%h:%i);
+    '> select sender, receiver,message,date_format(time,'%h:%i') as time from whatsapp;
+    '>
+    '>
+    '> ^Z
+Bye
+
+C:\Users\Ramesh>mysql -u root -p
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 15
+Server version: 8.0.32 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select sender, receiver,message,date_format(time,'%h:%i') as time from whatsapp;
+ERROR 1046 (3D000): No database selected
+mysql> use backup;
+Database changed
+mysql> select sender, receiver,message,date_format(time,'%h:%i') as time from whatsapp;
++---------+----------+----------------------------------+-------+
+| sender  | receiver | message                          | time  |
++---------+----------+----------------------------------+-------+
+| kalyani | madhu    | Just go to hell                  | 12:51 |
+| kalyani | madhu    | What the hell are you doing here | 12:52 |
+| kalyani | madhu    | ok bye                           | 12:52 |
++---------+----------+----------------------------------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select sender, receiver,message,date_format(time,'%h:%i:%p') as time from whatsapp;
++---------+----------+----------------------------------+----------+
+| sender  | receiver | message                          | time     |
++---------+----------+----------------------------------+----------+
+| kalyani | madhu    | Just go to hell                  | 12:51:PM |
+| kalyani | madhu    | What the hell are you doing here | 12:52:PM |
+| kalyani | madhu    | ok bye                           | 12:52:PM |
++---------+----------+----------------------------------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select sender, receiver,message,date_format(date,'%y:%m:%d') as time from whatsapp;
+ERROR 1054 (42S22): Unknown column 'date' in 'field list'
+mysql> select sender, receiver,message,date_format(time,'%h:%i:%p') as time from whatsapp;
++---------+----------+----------------------------------+----------+
+| sender  | receiver | message                          | time     |
++---------+----------+----------------------------------+----------+
+| kalyani | madhu    | Just go to hell                  | 12:51:PM |
+| kalyani | madhu    | What the hell are you doing here | 12:52:PM |
+| kalyani | madhu    | ok bye                           | 12:52:PM |
++---------+----------+----------------------------------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select sender, receiver,message,date_format(time,'%H:%I:%P') as time from whatsapp;
++---------+----------+----------------------------------+---------+
+| sender  | receiver | message                          | time    |
++---------+----------+----------------------------------+---------+
+| kalyani | madhu    | Just go to hell                  | 12:12:P |
+| kalyani | madhu    | What the hell are you doing here | 12:12:P |
+| kalyani | madhu    | ok bye                           | 12:12:P |
++---------+----------+----------------------------------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select sender, receiver,message,date_format(time,'%a:%m:%y') as time from whatsapp;
++---------+----------+----------------------------------+-----------+
+| sender  | receiver | message                          | time      |
++---------+----------+----------------------------------+-----------+
+| kalyani | madhu    | Just go to hell                  | Thu:03:23 |
+| kalyani | madhu    | What the hell are you doing here | Thu:03:23 |
+| kalyani | madhu    | ok bye                           | Thu:03:23 |
++---------+----------+----------------------------------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> select sender, receiver,message,date_format(time,'%a %m %y') as time from whatsapp;
++---------+----------+----------------------------------+-----------+
+| sender  | receiver | message                          | time      |
++---------+----------+----------------------------------+-----------+
+| kalyani | madhu    | Just go to hell                  | Thu 03 23 |
+| kalyani | madhu    | What the hell are you doing here | Thu 03 23 |
+| kalyani | madhu    | ok bye                           | Thu 03 23 |
++---------+----------+----------------------------------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> select sender, receiver,message,date_format(time,'%a %M %Y') as time from whatsapp;
++---------+----------+----------------------------------+----------------+
+| sender  | receiver | message                          | time           |
++---------+----------+----------------------------------+----------------+
+| kalyani | madhu    | Just go to hell                  | Thu March 2023 |
+| kalyani | madhu    | What the hell are you doing here | Thu March 2023 |
+| kalyani | madhu    | ok bye                           | Thu March 2023 |
++---------+----------+----------------------------------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> select sender, receiver,message,date_format(time,'%A %M %Y') as time from whatsapp;
++---------+----------+----------------------------------+--------------+
+| sender  | receiver | message                          | time         |
++---------+----------+----------------------------------+--------------+
+| kalyani | madhu    | Just go to hell                  | A March 2023 |
+| kalyani | madhu    | What the hell are you doing here | A March 2023 |
+| kalyani | madhu    | ok bye                           | A March 2023 |
++---------+----------+----------------------------------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> select sender, receiver,message,date_format(time,'%a %M %Y') as time from whatsapp;
++---------+----------+----------------------------------+----------------+
+| sender  | receiver | message                          | time           |
++---------+----------+----------------------------------+----------------+
+| kalyani | madhu    | Just go to hell                  | Thu March 2023 |
+| kalyani | madhu    | What the hell are you doing here | Thu March 2023 |
+| kalyani | madhu    | ok bye                           | Thu March 2023 |
++---------+----------+----------------------------------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> select sender, receiver,message,date_format(time,'%d %b %Y') as time from whatsapp;
++---------+----------+----------------------------------+-------------+
+| sender  | receiver | message                          | time        |
++---------+----------+----------------------------------+-------------+
+| kalyani | madhu    | Just go to hell                  | 02 Mar 2023 |
+| kalyani | madhu    | What the hell are you doing here | 02 Mar 2023 |
+| kalyani | madhu    | ok bye                           | 02 Mar 2023 |
++---------+----------+----------------------------------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> select sender, receiver,message,date_format(time,'%D %b %Y') as time from whatsapp;
++---------+----------+----------------------------------+--------------+
+| sender  | receiver | message                          | time         |
++---------+----------+----------------------------------+--------------+
+| kalyani | madhu    | Just go to hell                  | 2nd Mar 2023 |
+| kalyani | madhu    | What the hell are you doing here | 2nd Mar 2023 |
+| kalyani | madhu    | ok bye                           | 2nd Mar 2023 |
++---------+----------+----------------------------------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> select sender, receiver,message,date_format(time,'%b %m %y') as time from whatsapp;
++---------+----------+----------------------------------+-----------+
+| sender  | receiver | message                          | time      |
++---------+----------+----------------------------------+-----------+
+| kalyani | madhu    | Just go to hell                  | Mar 03 23 |
+| kalyani | madhu    | What the hell are you doing here | Mar 03 23 |
+| kalyani | madhu    | ok bye                           | Mar 03 23 |
++---------+----------+----------------------------------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> ^SS
